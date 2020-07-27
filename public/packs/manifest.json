@@ -1,0 +1,54 @@
+{
+  "application.js": "/packs/js/application-b4dde326d140eef478c3.js",
+  "application.js.map": "/packs/js/application-b4dde326d140eef478c3.js.map",
+  "conversations/conversation.js": "/packs/js/conversations/conversation-a833ba703de08b4c673b.js",
+  "conversations/conversation.js.map": "/packs/js/conversations/conversation-a833ba703de08b4c673b.js.map",
+  "conversations/messages_infinite_scroll.js": "/packs/js/conversations/messages_infinite_scroll-e9dc6ad3de4284f4a01d.js",
+  "conversations/messages_infinite_scroll.js.map": "/packs/js/conversations/messages_infinite_scroll-e9dc6ad3de4284f4a01d.js.map",
+  "conversations/position_and_visibility.js": "/packs/js/conversations/position_and_visibility-dacfbbf9c373e2e2abeb.js",
+  "conversations/position_and_visibility.js.map": "/packs/js/conversations/position_and_visibility-dacfbbf9c373e2e2abeb.js.map",
+  "conversations/toggle_window.js": "/packs/js/conversations/toggle_window-36081b606464a168aa00.js",
+  "conversations/toggle_window.js.map": "/packs/js/conversations/toggle_window-36081b606464a168aa00.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-b4dde326d140eef478c3.js"
+      ],
+      "js.map": [
+        "/packs/js/application-b4dde326d140eef478c3.js.map"
+      ]
+    },
+    "conversations/conversation": {
+      "js": [
+        "/packs/js/conversations/conversation-a833ba703de08b4c673b.js"
+      ],
+      "js.map": [
+        "/packs/js/conversations/conversation-a833ba703de08b4c673b.js.map"
+      ]
+    },
+    "conversations/messages_infinite_scroll": {
+      "js": [
+        "/packs/js/conversations/messages_infinite_scroll-e9dc6ad3de4284f4a01d.js"
+      ],
+      "js.map": [
+        "/packs/js/conversations/messages_infinite_scroll-e9dc6ad3de4284f4a01d.js.map"
+      ]
+    },
+    "conversations/position_and_visibility": {
+      "js": [
+        "/packs/js/conversations/position_and_visibility-dacfbbf9c373e2e2abeb.js"
+      ],
+      "js.map": [
+        "/packs/js/conversations/position_and_visibility-dacfbbf9c373e2e2abeb.js.map"
+      ]
+    },
+    "conversations/toggle_window": {
+      "js": [
+        "/packs/js/conversations/toggle_window-36081b606464a168aa00.js"
+      ],
+      "js.map": [
+        "/packs/js/conversations/toggle_window-36081b606464a168aa00.js.map"
+      ]
+    }
+  }
+}
