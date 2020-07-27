@@ -40,7 +40,7 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   Capybara.javascript_driver = :poltergeist
   Capybara.server = :puma  
-  DatabaseCleaner.allow_production = true
+  DatabaseCleaner.allow_production = false
   DatabaseCleaner.allow_remote_database_url = true
   Capybara.default_max_wait_time = 5
 
