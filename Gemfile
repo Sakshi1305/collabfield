@@ -36,8 +36,10 @@ gem 'faker'
 gem 'will_paginate', '~> 3.1.0'
 gem 'pry'
 gem 'gon'
-gem 'rabl-rails'
-gem 'rubocop', '~>0.62.0'
+gem 'rabl', '~> 0.14.2'
+# gem 'rabl-rails'
+# gem 'rubocop', '~>0.62.0'
+gem "rubocop-airbnb", github: "mcamara/ruby", glob: "rubocop-airbnb/*.gemspec"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

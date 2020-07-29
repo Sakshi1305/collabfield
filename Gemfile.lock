@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/mcamara/ruby.git
+  revision: 7a9e365a8f738296b9acb31c2baf4ef3900b7bd4
+  glob: rubocop-airbnb/*.gemspec
+  specs:
+    rubocop-airbnb (2.0.0)
+      rubocop (~> 0.76.0)
+      rubocop-performance (~> 1.5.0)
+      rubocop-rails (~> 2.3.2)
+      rubocop-rspec (~> 1.36.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -152,17 +163,14 @@ GEM
       capybara (>= 2.1, < 4)
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
-    powerpack (0.1.2)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.5)
     puma (4.3.5)
       nio4r (~> 2.0)
-    rabl-rails (0.5.5)
-      activesupport (>= 4.2)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
-      railties (>= 4.2)
+    rabl (0.14.3)
+      activesupport (>= 2.3.14)
     rack (2.2.3)
     rack-proxy (0.6.5)
       rack
@@ -226,14 +234,20 @@ GEM
       rspec-mocks (~> 3.9.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
-    rubocop (0.62.0)
+    rubocop (0.76.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
-      parser (>= 2.5, != 2.5.1.1)
-      powerpack (~> 0.1)
+      parser (>= 2.6)
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (~> 1.4.0)
+      unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-performance (1.5.2)
+      rubocop (>= 0.71.0)
+    rubocop-rails (2.3.2)
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
+    rubocop-rspec (1.36.0)
+      rubocop (>= 0.68.1)
     ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     rubyzip (2.3.0)
@@ -274,7 +288,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
-    unicode-display_width (1.4.1)
+    unicode-display_width (1.6.1)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (4.0.4)
@@ -321,11 +335,11 @@ DEPENDENCIES
   poltergeist
   pry
   puma (~> 4.1)
-  rabl-rails
+  rabl (~> 0.14.2)
   rails (~> 6.0.2, >= 6.0.2.1)
   rails-controller-testing
   rspec-rails (~> 3.6)
-  rubocop (~> 0.62.0)
+  rubocop-airbnb!
   sass-rails (>= 3.2)
   selenium-webdriver
   spring
