@@ -1,6 +1,6 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.feature "window", :type => :feature do
+RSpec.feature 'window', type: :feature do
   let(:user) { create(:user) }
   let(:conversation) { create(:private_conversation, sender_id: user.id) }
   let(:open_window) do
@@ -10,7 +10,7 @@ RSpec.feature "window", :type => :feature do
     find('#conversations-menu li a').click
     expect(page).to have_selector('.conversation-window')
   end
-  before(:each) do 
+  before(:each) do
     conversation
     create(:private_message, conversation_id: conversation.id, user_id: user.id)
   end
@@ -19,16 +19,16 @@ RSpec.feature "window", :type => :feature do
     open_window
   end
 
-  scenario 'user closes a conversation', js: true do 
+  scenario 'user closes a conversation', js: true do
     open_window
     find('.conversation-window .close-conversation').click
     expect(page).not_to have_selector('.conversation-window')
   end
 
-  scenario 'user sends a message', js: true do 
+  scenario 'user sends a message', js: true do
     open_window
     expect(page).to have_selector('.conversation-window .messages-list li', count: 0)
-    find('.conversation-window').fill_in "private_messages[body]", with: 'hey, mate'
+    find('.conversation-window').fill_in 'private_messages[body]', with: 'hey, mate'
     find('.conversation-window form .send-message', visible: false).trigger('click')
     expect(page).to have_selector('.conversation-window .messages-list li', count: 2)
   end

@@ -6,16 +6,16 @@ class Post < ApplicationRecord
   validates :category_id, presence: true
 
   default_scope -> { includes(:user).order(created_at: :desc) }
-  
-  scope :by_category, -> (branch, category_name) do 
-    joins(:category).where(categories: {name: category_name, branch: branch}) 
-  end
 
-  scope :by_branch, -> (branch) do
-    joins(:category).where(categories: {branch: branch}) 
-  end
+  scope :by_category, lambda { |branch, category_name|
+    joins(:category).where(categories: { name: category_name, branch: branch })
+  }
 
-  scope :search, -> (search) do
-    where("title ILIKE lower(?) OR content ILIKE lower(?)", "%#{search}%", "%#{search}%")
-  end
+  scope :by_branch, lambda { |branch|
+    joins(:category).where(categories: { branch: branch })
+  }
+
+  scope :search, lambda { |search|
+    where('title ILIKE lower(?) OR content ILIKE lower(?)', "%#{search}%", "%#{search}%")
+  }
 end

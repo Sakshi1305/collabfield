@@ -8,6 +8,6 @@ class CreatePrivateConversations < ActiveRecord::Migration[6.0]
     end
     add_index :private_conversations, :recipient_id
     add_index :private_conversations, :sender_id
-    add_index :private_conversations, [:recipient_id, :sender_id], unique: true
+    add_index :private_conversations, %i[recipient_id sender_id], unique: true
   end
 end

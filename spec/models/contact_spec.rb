@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Contact, type: :model do
-
   let(:contact) { build(:contact) }
 
   context 'Associations' do
@@ -37,5 +36,4 @@ RSpec.describe Contact, type: :model do
       expect(Contact.find_by_users(user1.id, user2.id)).to eq contact
     end
   end
-
 end

@@ -1,5 +1,5 @@
 module PostsHelper
-	def create_new_post_partial_path
+  def create_new_post_partial_path
     if user_signed_in?
       'posts/branch/create_new_post/signed_in'
     else
@@ -42,7 +42,7 @@ module PostsHelper
   def contact_user_partial_path
     if user_signed_in?
       @post.user.id != current_user.id ? 'posts/show/contact_user' : 'shared/empty_partial'
-    else 
+    else
       'posts/show/login_required'
     end
   end
