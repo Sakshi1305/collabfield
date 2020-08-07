@@ -1,2 +1,2 @@
 rails: bin/rails s
-webpack: bin/webpack
+webpack: RAILS_ENV=test bin/rails webpacker install 
