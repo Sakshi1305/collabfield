@@ -1,0 +1,38 @@
+.collabfield:
+  image: "ruby:2.6.3"
+  cache:
+    paths:
+      - vendor/ruby
+      - node_modules
+  services:
+    - postgres:latest
+  variables:
+    RAILS_ENV: test
+    POSTGRES_HOST_AUTH_METHOD: trust
+  before_script:
+    - export APT_CACHE_DIR=`pwd`/apt-cache && mkdir -pv $APT_CACHE_DIR
+    # Install node and dependencies
+    - curl -sL https://deb.nodesource.com/setup_12.x | bash -
+    - apt-get update -yq
+    - apt-get -o dir::cache::archives="$APT_CACHE_DIR" install -y apt-transport-https build-essential cmake nodejs software-properties-common unzip
+    # Install yarn
+    - wget -q -O - https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+    - echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
+    - apt-get update -yq
+    - apt-get -o dir::cache::archives="$APT_CACHE_DIR" install -y yarn
+    - yarn install
+    # Bundler and bundle install
+    - gem install bundler --no-document
+    - bundle install --jobs $(nproc) "${FLAGS[@]}" --path vendor
+    # App setup
+    - bundle exec rake db:setup
+    - bundle exec rails webpacker:compile
+test:rspec:
+  extends: .collabfield
+  stage: test
+  artifacts:
+    name: coverage_report
+    paths:
+      - coverage/
+  script:
+    - bundle exec rspec
