@@ -1,2 +1,2 @@
-rails: bin/rails s
-webpack: bin/webpack
+webpack: ./bin/webpack-dev-server
+
