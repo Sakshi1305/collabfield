@@ -24,13 +24,16 @@
 
 default: &default
   adapter: postgresql
+  encoding: unicode
   pool: 5
   host: localhost
   username: postgres
   password: postgres
+  port: 5432
+
 
 development:
-  host: 127.0.0.1
+  host: localhost
   adapter: postgresql
   encoding: unicode
   database: collabfield_development
@@ -76,8 +79,11 @@ development:
 # # re-generated from your development database when you run "rake".
 # # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  host: 127.0.0.1
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: postgres
   database: collabfield_test
 
 production:
